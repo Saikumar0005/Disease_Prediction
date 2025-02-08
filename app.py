@@ -183,10 +183,10 @@ if selected_model == "Parkinsons Prediction":
         PPE = st.text_input("PPE")
     
     parkinsons_diagnosis = ''
-    if st.button('Parkinsons Test Result'):
-        user_input = [fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ, DDP, Shimmer, Shimmer_dB, APQ3, APQ5, APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]
-        user_input = [float(x) for x in user_input]
-        Parkinsons_prediction = parkinsons_model.predict([user_input])
+    if st.button('Parkinsons Test result'):
+        input_data = [fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ, DDP, Shimmer, Shimmer_dB, APQ3, APQ5, APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]
+        user_input = [float(x) for x in input_data]
+        parkinsons_prediction = parkinsons_model.predict([user_input])
         if parkinsons_prediction[0] == 1:
             st.error('The Person  has Parkinsons Disease')
         else:
